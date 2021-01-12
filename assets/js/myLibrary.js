@@ -35,7 +35,14 @@ _ = {
         }
         return -1;
     },
-    
+    contains: (array, value , fromIndex) => {
+        for(let i = fromIndex; i < array.length; i++ ) {
+            if(value === array[i]) {
+                return true;
+            }
+        }
+    },
+
 }
 
 const numbers = [5,2, 22, 3, 41, 1 , 33];
@@ -58,3 +65,7 @@ console.log(find41);
 //          ------------------- FindIndex
 const fiIndexN1 = _.fiindex(numbers, (number) => number === 1 ) ;
 console.log(fiIndexN1);
+
+//          ------------------- Contains
+const containsNumber33StartIn3 = _.contains(numbers,33,3);
+console.log(containsNumber33StartIn3);
