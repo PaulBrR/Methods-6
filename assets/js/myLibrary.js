@@ -57,8 +57,20 @@ _ = {
         }
         return newArrayThings;
     },
-    
-
+    whithout: (array,nValues) => {
+        let arrayWithoutValues = [];
+        let arrayAux = [];
+        for(let i = 0; i < nValues.length; i++) {
+            for(let j = 0; j < array.length; j++){
+                if(nValues[i] !== array[j]){
+                    arrayAux.push(array[j])  
+                }
+            }
+             arrayWithoutValues = arrayAux;
+            arrayAux = [];
+        }
+        return arrayWithoutValues;
+    }
 }
 
 const numbers = [5,2, 22, 3, 41, 1 , 33];
@@ -89,3 +101,7 @@ console.log(containsNumber33StartIn3);
 //          ------------------- Pluck         
 const extractPeopleForName = _.pluck(people, 'name'); // interchangeable for    a g e 
 console.log(extractPeopleForName);
+
+//          ------------------- Whitout
+const whithout22And1 =  _.whithout(numbers,[22,1])
+console.log(whithout22And1);
