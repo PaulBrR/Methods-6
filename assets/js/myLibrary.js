@@ -20,6 +20,13 @@ _ = {
         }
         return newData;
     },
+    find: (array, fn) => {
+        for(let i = 0; i < array.length; i++) {
+            if(fn(array[i])){
+                return array[i];
+            }
+        }
+    },
     
 }
 
@@ -35,3 +42,7 @@ console.log(biggerThan20);
 //          ------------------- Map
 const addOne = _.map(numbers, (number) => number + 1);
 console.log(addOne);
+
+//          ------------------- Find
+const find41 = _.find(numbers,(number) => number === 41);
+console.log(find41);
