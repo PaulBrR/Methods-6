@@ -27,6 +27,14 @@ _ = {
             }
         }
     },
+    fiindex: (array, fn) => {
+        for(let i = 0; i < array.length; i++) {
+            if(fn(array[i])) {
+                return i;
+            }
+        }
+        return -1;
+    },
     
 }
 
@@ -46,3 +54,7 @@ console.log(addOne);
 //          ------------------- Find
 const find41 = _.find(numbers,(number) => number === 41);
 console.log(find41);
+
+//          ------------------- FindIndex
+const fiIndexN1 = _.fiindex(numbers, (number) => number === 1 ) ;
+console.log(fiIndexN1);
