@@ -42,6 +42,22 @@ _ = {
             }
         }
     },
+    pluck: (array,propertyName) => {
+        const newArrayThings = [];
+        let propertyArrays = Object.keys(array[0]); // I know the names of the properties
+        let propertyKey;
+        for(let i = 0; i< propertyArrays.length; i++) {
+            if(propertyName === propertyArrays[i]){ // I know the position of the property in the array
+                propertyKey = i ;
+            }
+        }
+        for(let i = 0; i < array.length; i++) {
+            let arrayAux = Object.values(array[i])
+            newArrayThings.push(arrayAux[propertyKey]); // new array with selected property         
+        }
+        return newArrayThings;
+    },
+    
 
 }
 
@@ -69,3 +85,7 @@ console.log(fiIndexN1);
 //          ------------------- Contains
 const containsNumber33StartIn3 = _.contains(numbers,33,3);
 console.log(containsNumber33StartIn3);
+
+//          ------------------- Pluck         
+const extractPeopleForName = _.pluck(people, 'name'); // interchangeable for    a g e 
+console.log(extractPeopleForName);
